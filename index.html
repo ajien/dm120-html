@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A guided introduction to the building blocks of HTML and CSS."
+    />
+    <title>HTML &amp; CSS — A beginner's field guide</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to lesson</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="HTML and CSS field guide home">
+        <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+        <span>Web basics <span class="brand-muted">/ field guide</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="activities.html">Activities</a>
+        <a href="playground.html">Playground</a>
+        <a class="nav-cta" href="activities.html#fork-guide"
+          >Fork &amp; try it <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+
+    <nav class="section-nav" aria-label="Lesson sections">
+      <a href="#html">HTML</a>
+      <a href="#typography">Typography</a>
+      <a href="#attributes">Attributes</a>
+      <a href="#css">CSS</a>
+      <a href="#devtools">DevTools</a>
+      <a href="#resources">Resources</a>
+    </nav>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span> A hands-on beginner's guide
+          </p>
+          <h1 id="hero-title">
+            Build your first<br /><span class="highlight">web page.</span>
+          </h1>
+          <p class="hero-intro">
+            HTML gives a page its meaning. CSS gives it a look and feel. Learn
+            the building blocks, then open the source and see how they fit
+            together.
+          </p>
+          <a class="button button-dark" href="#html"
+            >Start with HTML <span aria-hidden="true">↓</span></a
+          >
+          <p class="source-note">
+            <span class="source-icon" aria-hidden="true">⌘</span
+            ><span>
+              In CodeSandbox, open <strong>index.html</strong> and
+              <strong>styles.css</strong> beside the preview as you read.</span
+            >
+          </p>
+        </div>
+        <div
+          class="hero-art"
+          aria-label="Illustration of a web page built from HTML and CSS"
+        >
+          <div class="art-window">
+            <div class="window-bar">
+              <span></span><span></span><span></span
+              ><small>playground.html</small>
+            </div>
+            <div class="art-code" aria-hidden="true">
+              <p><span class="code-pink">&lt;main&gt;</span></p>
+              <p class="indent">
+                <span class="code-pink">&lt;h1&gt;</span
+                ><span class="code-white">Hello, web!</span
+                ><span class="code-pink">&lt;/h1&gt;</span>
+              </p>
+              <p class="indent">
+                <span class="code-pink">&lt;p&gt;</span
+                ><span class="code-white">I made this.</span
+                ><span class="code-pink">&lt;/p&gt;</span>
+              </p>
+              <p><span class="code-pink">&lt;/main&gt;</span></p>
+              <div class="art-rule"></div>
+              <p>
+                <span class="code-purple">h1</span>
+                <span class="code-white">{</span>
+              </p>
+              <p class="indent">
+                <span class="code-blue">color</span
+                ><span class="code-white">:</span>
+                <span class="code-yellow">#ffbd59</span
+                ><span class="code-white">;</span>
+              </p>
+              <p><span class="code-white">}</span></p>
+            </div>
+            <div class="art-sticker">HTML <span>+</span> CSS</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lesson-map" aria-label="Lesson roadmap">
+        <p class="map-label">YOUR LEARNING PATH</p>
+        <ol>
+          <li>
+            <a href="#html"
+              ><span class="map-number">01</span
+              ><span>HTML<br /><small>Structure</small></span></a
+            >
+          </li>
+          <li>
+            <a href="#elements"
+              ><span class="map-number">02</span
+              ><span>Elements<br /><small>Content</small></span></a
+            >
+          </li>
+          <li>
+            <a href="#typography"
+              ><span class="map-number">03</span
+              ><span>Typography<br /><small>Hierarchy</small></span></a
+            >
+          </li>
+          <li>
+            <a href="#attributes"
+              ><span class="map-number">04</span
+              ><span>Attributes<br /><small>Extra details</small></span></a
+            >
+          </li>
+          <li>
+            <a href="#css"
+              ><span class="map-number">05</span
+              ><span>CSS<br /><small>Presentation</small></span></a
+            >
+          </li>
+        </ol>
+      </section>
+
+
+
+      <section
+        class="lesson-section html-section"
+        id="html"
+        aria-labelledby="html-title"
+      >
+      <aside class="practice-note">
+        <h2>Try the examples yourself!</h2>
+
+        <p>
+          Every code example in this guide is something you can experiment with.
+          Copy the HTML examples into <code>playground.html</code> and the CSS
+          examples into <code>experiments.css</code>
+          to see them in action.
+        </p>
+
+        <p>
+          Change the text, colors, sizes, and other values to see what happens.
+          Experimenting is part of learning!
+        </p>
+
+        <p>
+          <strong>Remember:</strong> Fork the CodeSandbox project first, and
+          link <code>experiments.css</code> in <code>playground.html</code> when
+          testing CSS.
+        </p>
+      </aside>
+
+        <div class="section-heading">
+          <p class="eyebrow">
+            <span class="section-number">01</span> Start with structure
+          </p>
+          <h2 id="html-title">Meet HTML</h2>
+          <p>
+            HTML (HyperText Markup Language) describes the meaning and
+            organization of a web page. It uses <strong>elements</strong>—the
+            building blocks the browser reads to understand each piece of
+            content.
+          </p>
+        </div>
+
+        <div class="concept-grid">
+          <article class="concept-card">
+            <span class="card-icon icon-brackets" aria-hidden="true"
+              >&lt; &gt;</span
+            >
+            <h3>Elements</h3>
+            <p>
+              Most elements have an opening tag, content, and a closing tag.
+            </p>
+            <pre><code><span class="tok-tag">&lt;p&gt;</span>Hello there!<span class="tok-tag">&lt;/p&gt;</span></code></pre>
+            <p class="card-foot">
+              Together, the tags and content make a paragraph element.
+            </p>
+          </article>
+          <article class="concept-card">
+            <span class="card-icon icon-nest" aria-hidden="true">▧</span>
+            <h3>Nesting</h3>
+            <p>
+              Elements can live inside other elements. Indent nested elements to
+              make the structure easy to follow.
+            </p>
+            <pre><code><span class="tok-tag">&lt;p&gt;</span>Hello, <span class="tok-tag">&lt;strong&gt;</span>web!<span class="tok-tag">&lt;/strong&gt;</span><span class="tok-tag">&lt;/p&gt;</span></code></pre>
+            <p class="card-foot">
+              Close the inner element before the outer one.
+            </p>
+          </article>
+        </div>
+
+        <div class="document-anatomy">
+          <div class="anatomy-copy">
+            <p class="eyebrow">THE STARTING POINT</p>
+            <h3>An HTML document, from top to bottom</h3>
+            <p>
+              Every page begins with a small document skeleton. In
+              <strong>index.html</strong>, find these parts near the top and
+              match them to the notes.
+            </p>
+            <ol class="anatomy-list">
+              <li>
+                <span>1</span>
+                <p>
+                  <code>&lt;!doctype html&gt;</code> tells the browser to use
+                  modern HTML.
+                </p>
+              </li>
+              <li>
+                <span>2</span>
+                <p>
+                  <code>&lt;html lang="en"&gt;</code> wraps the page;
+                  <code>lang</code> identifies its language.
+                </p>
+              </li>
+              <li>
+                <span>3</span>
+                <p>
+                  <code>&lt;head&gt;</code> holds page information, the title,
+                  and links to resources.
+                </p>
+              </li>
+              <li>
+                <span>4</span>
+                <p>
+                  <code>&lt;body&gt;</code> holds the content people see and
+                  interact with.
+                </p>
+              </li>
+            </ol>
+          </div>
+          <div class="code-panel">
+            <div class="code-panel-head">
+              <span>THE DOCUMENT SKELETON</span
+              ><span class="code-file">playground.html</span>
+            </div>
+            <pre><code><span class="tok-comment">&lt;!-- 1. Tell the browser this is modern HTML --&gt;</span>
+<span class="tok-tag">&lt;!doctype html&gt;</span>
+<span class="tok-tag">&lt;html</span> <span class="tok-attr">lang</span>=<span class="tok-value">"en"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;head&gt;</span>
+    <span class="tok-tag">&lt;meta</span> <span class="tok-attr">charset</span>=<span class="tok-value">"utf-8"</span><span class="tok-tag">&gt;</span>
+    <span class="tok-tag">&lt;meta</span> <span class="tok-attr">name</span>=<span class="tok-value">"viewport"</span>
+      <span class="tok-attr">content</span>=<span class="tok-value">"width=device-width, initial-scale=1"</span><span class="tok-tag">&gt;</span>
+    <span class="tok-tag">&lt;title&gt;</span>My first page<span class="tok-tag">&lt;/title&gt;</span>
+    <span class="tok-tag">&lt;link</span> <span class="tok-attr">rel</span>=<span class="tok-value">"stylesheet"</span>
+      <span class="tok-attr">href</span>=<span class="tok-value">"styles.css"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;/head&gt;</span>
+  <span class="tok-tag">&lt;body&gt;</span>
+    <span class="tok-comment">&lt;!-- Visible page content goes here --&gt;</span>
+  <span class="tok-tag">&lt;/body&gt;</span>
+<span class="tok-tag">&lt;/html&gt;</span></code></pre>
+            <p class="code-panel-note">
+              <span aria-hidden="true">↳</span> The
+              <code>&lt;link&gt;</code> element connects this HTML page to its
+              CSS file.
+            </p>
+          </div>
+        </div>
+
+        <div class="file-organization" aria-labelledby="files-title">
+          <div class="file-organization-copy">
+            <p class="eyebrow">WHERE YOUR CODE LIVES</p>
+            <h3 id="files-title">A web page is usually more than one file.</h3>
+            <p>
+              Keep related files together in one project folder. The browser
+              starts with an HTML file, then follows links in that file to find
+              its CSS, images, and other resources.
+            </p>
+            <div class="index-explainer">
+              <strong>Why “index”?</strong> <code>index.html</code> is a common
+              default name for a website's home page. When a web server opens a
+              folder, it often looks for an index file automatically. Other
+              pages can use descriptive names such as <code>about.html</code> or
+              <code>contact.html</code>.
+            </div>
+          </div>
+          <div class="file-tree-panel">
+            <div class="code-panel-head">
+              <span>A SIMPLE PROJECT FOLDER</span
+              ><span class="code-file">my-first-site/</span>
+            </div>
+            <ul class="file-tree" aria-label="Example project files">
+              <li>
+                <span class="tree-icon folder-icon" aria-hidden="true">▰</span
+                ><strong>my-first-site/</strong>
+              </li>
+              <li class="tree-child">
+                <span class="tree-icon html-icon" aria-hidden="true">5</span
+                ><span
+                  ><strong>index.html</strong
+                  ><small>The home page and page structure</small></span
+                >
+              </li>
+              <li class="tree-child">
+                <span class="tree-icon css-icon" aria-hidden="true">✳</span
+                ><span
+                  ><strong>styles.css</strong
+                  ><small>Styles used by the page</small></span
+                >
+              </li>
+              <li class="tree-child">
+                <span class="tree-icon image-icon" aria-hidden="true">▧</span
+                ><span
+                  ><strong>images/</strong
+                  ><small>A folder for image files</small></span
+                >
+              </li>
+              <li class="tree-child tree-grandchild">
+                <span class="tree-icon image-icon" aria-hidden="true">▧</span
+                ><span
+                  ><strong>class-photo.jpg</strong
+                  ><small>An image inside the images folder</small></span
+                >
+              </li>
+              <li class="tree-child">
+                <span class="tree-icon html-icon" aria-hidden="true">5</span
+                ><span
+                  ><strong>playground.html</strong
+                  ><small>Another page in the same site</small></span
+                >
+              </li>
+              <li class="tree-child">
+                <span class="tree-icon css-icon" aria-hidden="true">✳</span
+                ><span
+                  ><strong>experiments.css</strong
+                  ><small>Your optional practice stylesheet</small></span
+                >
+              </li>
+            </ul>
+            <div class="file-path-note">
+              <strong>File names are your choice:</strong> use clear, lowercase
+              names such as <code>gallery.html</code> or <code>main.css</code>.
+              Avoid spaces; use hyphens when needed. The file extension matters:
+              <code>.html</code> for HTML, <code>.css</code> for CSS,
+              <code>.js</code> for JavaScript, and an image extension such as
+              <code>.jpg</code> or <code>.png</code> for images.<br /><strong
+                >Paths tell the browser where to look:</strong
+              >
+              <code>styles.css</code> is in the same folder as
+              <code>index.html</code>; <code>images/class-photo.jpg</code> means
+              “open the images folder, then find class-photo.jpg.” The link's
+              <code>href</code> must match the real name and location.
+            </div>
+          </div>
+        </div>
+
+        <aside class="try-card">
+          <div class="try-label">
+            <span aria-hidden="true">✳</span> PAUSE &amp; TRY
+          </div>
+          <div>
+            <h3>Find the page's head</h3>
+            <p>
+              In <strong>index.html</strong>, find the
+              <code>&lt;head&gt;</code>. Which line sets the browser-tab title?
+              Which line connects the page to its styles?
+            </p>
+          </div>
+          <span class="try-arrow" aria-hidden="true">↗</span>
+        </aside>
+      </section>
+
+      <section
+        class="lesson-section structure-section"
+        id="elements"
+        aria-labelledby="structure-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">
+            <span class="section-number">02</span> Give content a purpose
+          </p>
+          <h2 id="structure-title">Structure first,<br />then the details.</h2>
+          <p>
+            Choose an element for what its content <em>means</em>, not just how
+            you want it to look. Semantic HTML makes a page easier to understand
+            for browsers, people, and assistive technology.
+          </p>
+        </div>
+        <div class="tag-groups">
+          <article class="tag-group structure-group">
+            <div class="tag-group-head">
+              <span class="group-symbol" aria-hidden="true">▤</span>
+              <div>
+                <p class="eyebrow">PAGE STRUCTURE</p>
+                <h3>Landmarks &amp; sections</h3>
+              </div>
+            </div>
+            <dl class="tag-list">
+              <div>
+                <dt><code>&lt;header&gt;</code></dt>
+                <dd>Introductory content for a page or section.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;nav&gt;</code></dt>
+                <dd>A group of important navigation links.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;main&gt;</code></dt>
+                <dd>The page's primary, unique content.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;section&gt;</code></dt>
+                <dd>A themed group of content, usually with a heading.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;article&gt;</code></dt>
+                <dd>A self-contained item, like a post or news story.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;aside&gt;</code></dt>
+                <dd>Related, supporting content.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;footer&gt;</code></dt>
+                <dd>Closing information for a page or section.</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="tag-group content-group">
+            <div class="tag-group-head">
+              <span class="group-symbol" aria-hidden="true">Tt</span>
+              <div>
+                <p class="eyebrow">CONTENT &amp; PRESENTATION</p>
+                <h3>Text &amp; media</h3>
+              </div>
+            </div>
+            <dl class="tag-list">
+              <div>
+                <dt><code>&lt;h1&gt;–&lt;h6&gt;</code></dt>
+                <dd>Headings in a meaningful hierarchy.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;p&gt;</code></dt>
+                <dd>A paragraph of text.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code></dt>
+                <dd>
+                  Unordered or ordered list; items use <code>&lt;li&gt;</code>.
+                </dd>
+              </div>
+              <div>
+                <dt><code>&lt;a&gt;</code></dt>
+                <dd>A link to another page or place.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;img&gt;</code></dt>
+                <dd>An image; include useful alternative text.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;strong&gt;</code> / <code>&lt;em&gt;</code></dt>
+                <dd>Important text or emphasized text.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;blockquote&gt;</code></dt>
+                <dd>A longer quotation from another source.</dd>
+              </div>
+              <div>
+                <dt><code>&lt;code&gt;</code></dt>
+                <dd>A short piece of computer code.</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+        <div class="example-strip">
+          <div>
+            <p class="eyebrow">A SMALL, COMPLETE EXAMPLE</p>
+            <h3>Meaningful markup reads like an outline.</h3>
+            <p>
+              Notice how the tags describe each part's role. Change the text in
+              <strong>playground.html</strong> to make it your own.
+            </p>
+          </div>
+          <pre><code><span class="tok-tag">&lt;article&gt;</span>
+  <span class="tok-tag">&lt;h2&gt;</span>A little discovery<span class="tok-tag">&lt;/h2&gt;</span>
+  <span class="tok-tag">&lt;p&gt;</span>Today I learned how a page is built.<span class="tok-tag">&lt;/p&gt;</span>
+  <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-value">"https://example.com"</span><span class="tok-tag">&gt;</span>Read more<span class="tok-tag">&lt;/a&gt;</span>
+<span class="tok-tag">&lt;/article&gt;</span></code></pre>
+        </div>
+      </section>
+
+      <section
+        class="lesson-section typography-section"
+        id="typography"
+        aria-labelledby="typography-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">
+            <span class="section-number">03</span> Make words easy to read
+          </p>
+          <h2 id="typography-title">
+            Typography creates<br /><span class="highlight">hierarchy.</span>
+          </h2>
+          <p>
+            Typography is how text looks and reads: its typeface, size, weight,
+            spacing, and line length. A clear hierarchy helps readers tell
+            titles, sections, and body text apart and find their way through a
+            page.
+          </p>
+        </div>
+        <div class="type-hierarchy">
+          <div class="type-hierarchy-copy">
+            <p class="eyebrow">A SIMPLE TYPE SCALE</p>
+            <h3>Show what matters first.</h3>
+            <p>
+              Use one clear page title, then section headings, then smaller
+              subheadings where needed. Body text should be comfortable to read.
+              Keep the heading order meaningful in HTML; use CSS to control how
+              each level looks.
+            </p>
+            <ul>
+              <li>
+                <strong>Heading:</strong> signals the topic of the page or
+                section.
+              </li>
+              <li><strong>Body:</strong> carries the main reading content.</li>
+              <li>
+                <strong>Supporting text:</strong> adds a caption, note, or
+                secondary detail.
+              </li>
+            </ul>
+          </div>
+          <div
+            class="type-sample"
+            aria-label="Example of heading and paragraph hierarchy"
+          >
+            <p class="type-sample-label">A PAGE ABOUT GARDENING</p>
+            <h3>Growing a small garden</h3>
+            <h4>Choose a sunny spot</h4>
+            <p>
+              Most herbs grow well with several hours of sunlight. Start with a
+              few plants that you enjoy using.
+            </p>
+            <p class="type-caption">
+              A simple page title, section heading, body paragraph, and caption.
+            </p>
+          </div>
+        </div>
+        <div class="type-properties">
+          <article>
+            <h3>Typeface &amp; size</h3>
+            <p>
+              <code>font-family</code> chooses the typeface;
+              <code>font-size</code> sets its size. A fallback font list helps
+              if the first font is unavailable.
+            </p>
+            <pre><code><span class="tok-property">font-family</span>: <span class="tok-value">Arial, sans-serif</span>;
+<span class="tok-property">font-size</span>: <span class="tok-value">1rem</span>;</code></pre>
+          </article>
+          <article>
+            <h3>Weight &amp; line height</h3>
+            <p>
+              <code>font-weight</code> changes how bold text appears.
+              <code>line-height</code> adds breathing room between lines; it is
+              commonly unitless.
+            </p>
+            <pre><code><span class="tok-property">font-weight</span>: <span class="tok-value">700</span>;
+<span class="tok-property">line-height</span>: <span class="tok-value">1.6</span>;</code></pre>
+          </article>
+          <article>
+            <h3>Alignment &amp; measure</h3>
+            <p>
+              <code>text-align</code> aligns text within its block. Limiting a
+              paragraph's <code>max-width</code> can make long lines easier to
+              follow.
+            </p>
+            <pre><code><span class="tok-property">text-align</span>: <span class="tok-value">left</span>;
+<span class="tok-property">max-width</span>: <span class="tok-value">65ch</span>;</code></pre>
+          </article>
+        </div>
+        <div class="font-linking">
+          <div class="font-linking-copy">
+            <p class="eyebrow">USING A WEB FONT</p>
+            <h3>Choose a font, then connect it.</h3>
+            <p>
+              A web font is a font file or hosted font that a page loads instead
+              of relying only on fonts installed on the visitor's device. One
+              option is to use a font provider such as Google Fonts; another is
+              to host a licensed font file in your own project.
+            </p>
+            <ol>
+              <li>
+                Choose a font and the weights you need from a reputable
+                provider.
+              </li>
+              <li>
+                Copy the provider's stylesheet link into the document's
+                <code>&lt;head&gt;</code>.
+              </li>
+              <li>
+                Use the exact <code>font-family</code> name given by the
+                provider in your CSS.
+              </li>
+              <li>
+                Keep a generic fallback such as <code>sans-serif</code> in case
+                the font cannot load.
+              </li>
+            </ol>
+            <p class="font-licensing-note">
+              <strong>Keep it lightweight:</strong> Use only the font families
+              and weights you need. For a real project, check the provider's
+              licensing and privacy guidance.
+            </p>
+          </div>
+          <div class="font-linking-examples">
+            <div class="code-panel">
+              <div class="code-panel-head">
+                <span>1. LINK THE FONT IN THE PAGE HEAD</span
+                ><span class="code-file">playground.html</span>
+              </div>
+              <pre><code><span class="tok-comment">&lt;!-- Example hosted-font stylesheet link --&gt;</span>
+<span class="tok-tag">&lt;link</span> <span class="tok-attr">rel</span>=<span class="tok-value">"preconnect"</span>
+  <span class="tok-attr">href</span>=<span class="tok-value">"https://fonts.googleapis.com"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;link</span> <span class="tok-attr">rel</span>=<span class="tok-value">"stylesheet"</span>
+  <span class="tok-attr">href</span>=<span class="tok-value">"https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&amp;display=swap"</span><span class="tok-tag">&gt;</span></code></pre>
+              <p class="code-panel-note">
+                Place font links in <code>&lt;head&gt;</code>, before the
+                stylesheet that uses the font. This example requires an internet
+                connection.
+              </p>
+            </div>
+            <div class="code-panel">
+              <div class="code-panel-head">
+                <span>2. USE THE FONT IN A RULE</span
+                ><span class="code-file">experiments.css</span>
+              </div>
+              <pre><code><span class="tok-selector">body</span> <span class="tok-brace">{</span>
+  <span class="tok-property">font-family</span>: <span class="tok-value">"Nunito Sans", sans-serif</span>;
+<span class="tok-brace">}</span>
+
+<span class="tok-selector">h1</span> <span class="tok-brace">{</span>
+  <span class="tok-property">font-family</span>: <span class="tok-value">"Nunito Sans", sans-serif</span>;
+  <span class="tok-property">font-weight</span>: <span class="tok-value">700</span>;
+<span class="tok-brace">}</span></code></pre>
+              <p class="code-panel-note">
+                The family name must match the font you loaded. The browser uses
+                <code>sans-serif</code> if it cannot use that font.
+              </p>
+            </div>
+          </div>
+        </div>
+        <aside class="font-pairing" aria-labelledby="font-pairing-title">
+          <div class="font-pairing-copy">
+            <p class="eyebrow">PAIRING TYPEFACES</p>
+            <h3 id="font-pairing-title">
+              Let headings and body text work together.
+            </h3>
+            <p>
+              A font combination pairs typefaces with different jobs—for
+              example, a distinctive heading font with a simple, highly readable
+              body font. Contrast helps create hierarchy, while shared
+              characteristics help the pair feel coordinated.
+            </p>
+            <ol>
+              <li>Choose one font for headings and one for paragraphs.</li>
+              <li>
+                Keep the pairing simple; two font families are usually enough
+                for a beginner project.
+              </li>
+              <li>
+                Check readability at normal paragraph size, not only in a large
+                heading.
+              </li>
+              <li>Load both families and only the weights you plan to use.</li>
+            </ol>
+          </div>
+          <div class="font-pairing-tools">
+            <h4>Explore and choose</h4>
+            <p>
+              <a
+                href="https://fontjoy.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Fontjoy <span aria-hidden="true">↗</span></a
+              >
+              can generate font-pairing ideas. Treat suggestions as a starting
+              point, then preview them with your own text.
+            </p>
+            <p>
+              <a
+                href="https://fonts.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Google Fonts <span aria-hidden="true">↗</span></a
+              >
+              lets you browse typefaces, compare styles, and get the stylesheet
+              link and family names to use in your page.
+            </p>
+            <p class="font-pairing-note">
+              <strong>Try it:</strong> pick a heading and body font, link both
+              in <code>playground.html</code>, and assign them to headings and
+              paragraphs in <code>experiments.css</code>.
+            </p>
+          </div>
+        </aside>
+        <div class="type-rule-example">
+          <div>
+            <p class="eyebrow">TRY A CLASS SELECTOR</p>
+            <h3>Style headings consistently.</h3>
+            <p>
+              Give an element a class in HTML, then use a dot before that class
+              name in CSS. This rule applies to elements with
+              <code>class="page-title"</code>; it does not change the HTML
+              heading level.
+            </p>
+          </div>
+          <div class="code-panel">
+            <div class="code-panel-head">
+              <span>HTML + CSS</span
+              ><span class="code-file">playground.html / experiments.css</span>
+            </div>
+            <pre><code><span class="tok-comment">&lt;!-- In your HTML --&gt;</span>
+<span class="tok-tag">&lt;h1</span> <span class="tok-attr">class</span>=<span class="tok-value">"page-title"</span><span class="tok-tag">&gt;</span>My garden<span class="tok-tag">&lt;/h1&gt;</span>
+
+<span class="tok-comment">/* In your CSS */</span>
+<span class="tok-selector">.page-title</span> <span class="tok-brace">{</span>
+  <span class="tok-property">font-size</span>: <span class="tok-value">2.5rem</span>;
+  <span class="tok-property">font-weight</span>: <span class="tok-value">700</span>;
+  <span class="tok-property">line-height</span>: <span class="tok-value">1.1</span>;
+<span class="tok-brace">}</span></code></pre>
+          </div>
+        </div>
+        <aside class="try-card try-card-light">
+          <div class="try-label">
+            <span aria-hidden="true">✳</span> PAUSE &amp; TRY
+          </div>
+          <div>
+            <h3>Build a heading hierarchy</h3>
+            <p>
+              In <strong>playground.html</strong>, add a page
+              <code>&lt;h1&gt;</code>, two <code>&lt;h2&gt;</code> section
+              headings, and a paragraph under each. In
+              <strong>experiments.css</strong>, give the headings different
+              sizes and weights. Keep their HTML levels in a sensible order.
+            </p>
+          </div>
+          <span class="try-arrow" aria-hidden="true">↗</span>
+        </aside>
+      </section>
+
+      <section
+        class="lesson-section attributes-section"
+        id="attributes"
+        aria-labelledby="attributes-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">
+            <span class="section-number">04</span> Add useful details
+          </p>
+          <h2 id="attributes-title">
+            Attributes add<br /><span class="highlight">context.</span>
+          </h2>
+          <p>
+            An attribute is extra information written in an element's opening
+            tag. It usually has a name and a value: <code>name="value"</code>.
+          </p>
+        </div>
+        <div class="attribute-board">
+          <div class="attribute-example">
+            <p class="eyebrow">READ THIS TAG</p>
+            <pre
+              class="big-code"
+            ><code><span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-value">"https://example.com"</span> <span class="tok-attr">class</span>=<span class="tok-value">"read-more"</span><span class="tok-tag">&gt;</span>Read more<span class="tok-tag">&lt;/a&gt;</span></code></pre>
+            <div class="attribute-key">
+              <span><b>href</b> is the attribute name</span
+              ><span><b>"https://example.com"</b> is its value</span>
+            </div>
+          </div>
+          <div class="attribute-rules">
+            <article>
+              <span class="rule-number">A</span>
+              <div>
+                <h3>Some attributes are global</h3>
+                <p>
+                  <code>class</code> and <code>id</code> can be used on many
+                  HTML elements. A class can be shared; an ID should identify
+                  one unique element on the page.
+                </p>
+                <pre><code><span class="tok-tag">&lt;p</span> <span class="tok-attr">class</span>=<span class="tok-value">"note"</span><span class="tok-tag">&gt;</span>Remember this.<span class="tok-tag">&lt;/p&gt;</span></code></pre>
+              </div>
+            </article>
+            <article>
+              <span class="rule-number">B</span>
+              <div>
+                <h3>Others belong to specific elements</h3>
+                <p>
+                  <code>href</code> gives an <code>&lt;a&gt;</code> its
+                  destination. <code>src</code> and <code>alt</code> describe
+                  the image source and alternative text for an
+                  <code>&lt;img&gt;</code>.
+                </p>
+                <pre><code><span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-value">"flower.jpg"</span>
+  <span class="tok-attr">alt</span>=<span class="tok-value">"A yellow flower"</span><span class="tok-tag">&gt;</span></code></pre>
+              </div>
+            </article>
+          </div>
+        </div>
+        <p class="important-note">
+          <span aria-hidden="true">!</span
+          ><span
+            ><strong>Remember:</strong> HTML attributes are not interchangeable.
+            Use an attribute on elements that support it—<code>href</code>
+            belongs on links, not on every tag. Always give links clear
+            destinations and images meaningful <code>alt</code> text (or empty
+            <code>alt=""</code> when an image is purely decorative).</span
+          >
+        </p>
+        <aside class="try-card try-card-light">
+          <div class="try-label">
+            <span aria-hidden="true">✳</span> PAUSE &amp; TRY
+          </div>
+          <div>
+            <h3>Spot the attribute</h3>
+            <p>
+              Find an <code>&lt;a&gt;</code> in the examples. Point to its
+              opening tag, attribute name, and value. What would happen if you
+              changed the value of <code>href</code>?
+            </p>
+          </div>
+          <span class="try-arrow" aria-hidden="true">↗</span>
+        </aside>
+      </section>
+
+      <section
+        class="lesson-section css-section"
+        id="css"
+        aria-labelledby="css-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">
+            <span class="section-number">05</span> Add the visual layer
+          </p>
+          <h2 id="css-title">
+            Now, make it<br /><span class="highlight">yours.</span>
+          </h2>
+          <p>
+            CSS (Cascading Style Sheets) controls how HTML looks: colors,
+            spacing, type, and layout. The browser combines HTML structure with
+            CSS rules to draw the page.
+          </p>
+        </div>
+        <div class="css-layout">
+          <div class="css-concepts">
+            <article>
+              <span class="css-step">01</span>
+              <div>
+                <h3>Connect the stylesheet</h3>
+                <p>
+                  The <code>&lt;link&gt;</code> element goes inside
+                  <code>&lt;head&gt;</code>. The <code>href</code> value is the
+                  CSS file path, relative to the HTML file.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span class="css-step">02</span>
+              <div>
+                <h3>Choose what to style</h3>
+                <p>
+                  A selector picks the HTML element. A declaration inside braces
+                  says what property to change and what value to use.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span class="css-step">03</span>
+              <div>
+                <h3>Adjust the box</h3>
+                <p>
+                  Each element is a box. Content sits inside padding, then
+                  border; margin creates space outside the border.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="css-code-area">
+            <div class="code-panel css-connection">
+              <div class="code-panel-head">
+                <span>IN YOUR HTML &lt;HEAD&gt;</span
+                ><span class="code-file">playground.html</span>
+              </div>
+              <pre><code><span class="tok-tag">&lt;link</span> <span class="tok-attr">rel</span>=<span class="tok-value">"stylesheet"</span>
+  <span class="tok-attr">href</span>=<span class="tok-value">"styles.css"</span><span class="tok-tag">&gt;</span></code></pre>
+              <p class="code-panel-note">
+                This page's starter link is already in
+                <strong>playground.html</strong>.
+              </p>
+            </div>
+            <div class="code-panel">
+              <div class="code-panel-head">
+                <span>IN YOUR CSS FILE</span
+                ><span class="code-file">styles.css</span>
+              </div>
+              <pre><code><span class="tok-selector">.lesson-title</span> <span class="tok-brace">{</span>
+  <span class="tok-property">color</span>: <span class="tok-value">#284b3b</span>;
+  <span class="tok-property">font-size</span>: <span class="tok-value">2rem</span>;
+  <span class="tok-property">margin-bottom</span>: <span class="tok-value">1rem</span>;
+<span class="tok-brace">}</span></code></pre>
+              <div class="css-anatomy">
+                <span><b>.lesson-title</b> selector</span
+                ><span><b>color</b> property</span
+                ><span><b>#284b3b</b> value</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="css-properties">
+          <div class="css-properties-heading">
+            <p class="eyebrow">COMMON VISUAL PROPERTIES</p>
+            <h3>Pick a property. Give it a value.</h3>
+            <p>
+              CSS declarations go inside a rule's curly braces. Write a property
+              name, a colon, its value, and a semicolon. The selector chooses
+              which elements receive the styling.
+            </p>
+          </div>
+          <div class="css-property-grid">
+            <article class="css-property-card">
+              <h4>Text</h4>
+              <p>
+                Change text color, size, weight, alignment, or line spacing.
+              </p>
+              <pre><code><span class="tok-property">color</span>: <span class="tok-value">#284b3b</span>;
+<span class="tok-property">font-size</span>: <span class="tok-value">1.25rem</span>;
+<span class="tok-property">font-weight</span>: <span class="tok-value">700</span>;
+<span class="tok-property">text-align</span>: <span class="tok-value">center</span>;</code></pre>
+            </article>
+            <article class="css-property-card">
+              <h4>Background &amp; border</h4>
+              <p>
+                Add a background color, an outline around the box, or rounded
+                corners.
+              </p>
+              <pre><code><span class="tok-property">background-color</span>: <span class="tok-value">#e6f0d8</span>;
+<span class="tok-property">border</span>: <span class="tok-value">2px solid #789346</span>;
+<span class="tok-property">border-radius</span>: <span class="tok-value">8px</span>;</code></pre>
+            </article>
+            <article class="css-property-card">
+              <h4>Space &amp; size</h4>
+              <p>
+                Padding adds room inside an element; margin adds room outside
+                it.
+              </p>
+              <pre><code><span class="tok-property">padding</span>: <span class="tok-value">1rem</span>;
+<span class="tok-property">margin</span>: <span class="tok-value">1rem 0</span>;
+<span class="tok-property">width</span>: <span class="tok-value">100%</span>;</code></pre>
+            </article>
+            <article class="css-property-card">
+              <h4>Layout</h4>
+              <p>
+                Choose a layout behavior and add consistent space between
+                children.
+              </p>
+              <pre><code><span class="tok-property">display</span>: <span class="tok-value">flex</span>;
+<span class="tok-property">gap</span>: <span class="tok-value">1rem</span>;
+<span class="tok-property">justify-content</span>: <span class="tok-value">center</span>;</code></pre>
+            </article>
+          </div>
+          <div class="css-rule-example">
+            <div class="css-rule-copy">
+              <p class="eyebrow">PUT IT TOGETHER</p>
+              <h4>One rule can style many elements.</h4>
+              <p>
+                This selector targets every paragraph. Change the selector to
+                <code>.note</code> to target only elements with
+                <code>class="note"</code>. Properties are reusable, but their
+                visible effect depends on the element and the value.
+              </p>
+            </div>
+            <div class="code-panel">
+              <div class="code-panel-head">
+                <span>SELECTOR + DECLARATIONS</span
+                ><span class="code-file">experiments.css</span>
+              </div>
+              <pre><code><span class="tok-selector">p</span> <span class="tok-brace">{</span>
+  <span class="tok-property">color</span>: <span class="tok-value">#43594a</span>;
+  <span class="tok-property">font-size</span>: <span class="tok-value">1rem</span>;
+  <span class="tok-property">line-height</span>: <span class="tok-value">1.6</span>;
+<span class="tok-brace">}</span></code></pre>
+            </div>
+          </div>
+          <p class="css-property-note">
+            <strong>Reading a declaration:</strong> in
+            <code>padding: 1rem;</code>, <code>padding</code> is the property
+            and <code>1rem</code> is its value. The colon separates them; the
+            semicolon ends that declaration. A rule can contain several
+            declarations.
+          </p>
+          <div class="css-units" aria-labelledby="css-units-title">
+            <div class="css-units-intro">
+              <p class="eyebrow">SIZING UNITS</p>
+              <h4 id="css-units-title">How big is a <code>rem</code>?</h4>
+              <p>
+                CSS values often include a number and a unit. The unit tells the
+                browser how to interpret the number. Choose a unit based on what
+                the size should relate to.
+              </p>
+            </div>
+            <div class="css-units-grid">
+              <article>
+                <h5><code>px</code> — pixels</h5>
+                <p>
+                  A fixed CSS length, useful for fine details like a thin
+                  border. It does not literally mean one hardware screen pixel.
+                </p>
+                <pre><code><span class="tok-property">border-width</span>: <span class="tok-value">2px</span>;</code></pre>
+              </article>
+              <article>
+                <h5><code>rem</code> — root-relative</h5>
+                <p>
+                  Relative to the root page font size. Often used for text and
+                  spacing so sizes can scale consistently. With a 16px root
+                  size, <code>1rem</code> equals 16px.
+                </p>
+                <pre><code><span class="tok-property">font-size</span>: <span class="tok-value">1.25rem</span>;</code></pre>
+              </article>
+              <article>
+                <h5><code>em</code> — parent-relative</h5>
+                <p>
+                  Relative to the current element's font size (often inherited
+                  from its parent). Useful for sizing something in proportion to
+                  nearby text.
+                </p>
+                <pre><code><span class="tok-property">padding</span>: <span class="tok-value">1em</span>;</code></pre>
+              </article>
+              <article>
+                <h5><code>%</code> — percentage</h5>
+                <p>
+                  Usually relative to the containing element's corresponding
+                  size. For example, <code>width: 100%</code> fills the
+                  available parent width.
+                </p>
+                <pre><code><span class="tok-property">width</span>: <span class="tok-value">100%</span>;</code></pre>
+              </article>
+              <article>
+                <h5><code>vw</code> / <code>vh</code> — viewport</h5>
+                <p>
+                  Relative to the browser's viewport: <code>1vw</code> is 1% of
+                  its width; <code>1vh</code> is 1% of its height. Use carefully
+                  for fluid sizing.
+                </p>
+                <pre><code><span class="tok-property">width</span>: <span class="tok-value">50vw</span>;</code></pre>
+              </article>
+              <article>
+                <h5>Unitless numbers</h5>
+                <p>
+                  Some properties, such as <code>line-height</code> and
+                  <code>font-weight</code>, commonly use a number without a
+                  length unit.
+                </p>
+                <pre><code><span class="tok-property">line-height</span>: <span class="tok-value">1.5</span>;</code></pre>
+              </article>
+            </div>
+            <p class="css-units-note">
+              <strong>Beginner tip:</strong> Start with <code>rem</code> for
+              text and spacing, percentages for flexible widths, and
+              <code>px</code> for small precise details. Many CSS properties
+              accept only certain units or keywords, so check what the property
+              expects.
+            </p>
+          </div>
+        </div>
+        <div class="css-vocab">
+          <div>
+            <span class="vocab-icon" aria-hidden="true">Aa</span
+            ><span
+              ><strong>Typography &amp; color</strong
+              ><small>font-family · font-size · color</small></span
+            >
+          </div>
+          <div>
+            <span class="vocab-icon vocab-box" aria-hidden="true">□</span
+            ><span
+              ><strong>The box model</strong
+              ><small>content · padding · border · margin</small></span
+            >
+          </div>
+          <div>
+            <span class="vocab-icon vocab-layout" aria-hidden="true">▦</span
+            ><span
+              ><strong>Simple layout</strong
+              ><small>display · width · gap</small></span
+            >
+          </div>
+        </div>
+        <aside class="try-card">
+          <div class="try-label">
+            <span aria-hidden="true">✳</span> PAUSE &amp; TRY
+          </div>
+          <div>
+            <h3>Find a rule and follow it</h3>
+            <p>
+              Open <strong>styles.css</strong> and find a selector. Identify its
+              property and value. Change one value, save, and watch the preview
+              update.
+            </p>
+          </div>
+          <span class="try-arrow" aria-hidden="true">↗</span>
+        </aside>
+      </section>
+
+      <section
+        class="devtools-section"
+        id="devtools"
+        aria-labelledby="devtools-title"
+      >
+        <div class="devtools-heading">
+          <p class="eyebrow">LOOK UNDER THE HOOD</p>
+          <h2 id="devtools-title">
+            Explore with browser<br /><span class="highlight"
+              >developer tools.</span
+            >
+          </h2>
+          <p>
+            Developer tools are built into browsers such as Chrome, Edge,
+            Firefox, and Safari. They let you inspect a page, test temporary
+            changes, and see useful debugging messages—without changing your
+            source files.
+          </p>
+        </div>
+        <div class="devtools-grid">
+          <article class="devtools-card">
+            <span class="devtools-number">01</span>
+            <h3>Open the tools</h3>
+            <p>
+              Right-click an element in the preview and choose
+              <strong>Inspect</strong>, or open the browser menu and choose
+              Developer Tools. Common shortcuts include <kbd>F12</kbd> or
+              <kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>I</kbd> on Mac; shortcuts can vary
+              by browser.
+            </p>
+          </article>
+          <article class="devtools-card">
+            <span class="devtools-number">02</span>
+            <h3>Inspect an element</h3>
+            <p>
+              In the <strong>Elements</strong> (Chrome/Edge) or
+              <strong>Inspector</strong> (Firefox/Safari) panel, explore the
+              page's HTML tree. Hover over a node to see its area highlighted in
+              the preview.
+            </p>
+          </article>
+          <article class="devtools-card">
+            <span class="devtools-number">03</span>
+            <h3>Try a CSS change</h3>
+            <p>
+              Select an element and find its <strong>Styles</strong> or
+              <strong>Rules</strong> panel. Click a value such as
+              <code>color</code> and change it. You can toggle a declaration or
+              add a temporary rule.
+            </p>
+          </article>
+          <article class="devtools-card">
+            <span class="devtools-number">04</span>
+            <h3>Understand the result</h3>
+            <p>
+              Edits made in developer tools are temporary: refresh the page and
+              they disappear. To keep a change, copy the rule into
+              <strong>experiments.css</strong> in your own fork.
+            </p>
+          </article>
+        </div>
+        <div class="devtools-lower">
+          <div class="devtools-console">
+            <p class="eyebrow">THE CONSOLE</p>
+            <h3>Read browser messages</h3>
+            <p>
+              The <strong>Console</strong> can show errors and warnings that
+              help explain why something is not working. You can also run small
+              JavaScript expressions there.
+            </p>
+            <pre><code><span class="tok-comment">// Try a simple expression in the Console</span>
+<span class="tok-selector">2</span> <span class="tok-brace">+</span> <span class="tok-selector">2</span>
+<span class="tok-comment">// The browser evaluates it and shows: 4</span></code></pre>
+          </div>
+          <aside class="devtools-challenge">
+            <div class="try-label">
+              <span aria-hidden="true">✳</span> PAUSE &amp; TRY
+            </div>
+            <h3>Inspect, experiment, save</h3>
+            <ol>
+              <li>Open the playground in the browser and inspect a heading.</li>
+              <li>
+                In the Styles panel, temporarily change its color or font size.
+              </li>
+              <li>
+                Find the rule that controls the result, then add your own
+                version to <strong>experiments.css</strong>.
+              </li>
+              <li>
+                Refresh to see what was temporary, then compare with the saved
+                rule in your fork.
+              </li>
+            </ol>
+          </aside>
+        </div>
+        <p class="devtools-note">
+          <strong>Remember:</strong> Developer tools help you investigate and
+          test. Save lasting edits in your project files; the browser's
+          temporary edits are not automatically saved.
+        </p>
+      </section>
+
+      <section
+        class="resources-section"
+        id="resources"
+        aria-labelledby="resources-title"
+      >
+        <div class="resources-heading">
+          <p class="eyebrow">KEEP LEARNING</p>
+          <h2 id="resources-title">
+            Good places to<br /><span class="highlight">go deeper.</span>
+          </h2>
+          <p>
+            Save these references for when you want a clearer explanation,
+            another example, or a place to practice.
+          </p>
+        </div>
+        <div class="resource-grid">
+          <article class="resource-card">
+            <p class="resource-topic">HTML · CSS · JavaScript</p>
+            <h3>MDN Web Docs</h3>
+            <p>
+              Clear guides and reference pages from Mozilla. A reliable place to
+              look up an element, property, or JavaScript feature.
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >HTML: structuring content
+                  <span aria-hidden="true">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >CSS: styling basics <span aria-hidden="true">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >JavaScript: scripting <span aria-hidden="true">↗</span></a
+                >
+              </li>
+            </ul>
+          </article>
+          <article class="resource-card">
+            <p class="resource-topic">HTML · CSS · JavaScript · jQuery</p>
+            <h3>W3Schools</h3>
+            <p>
+              Short lessons and browser-based examples. Useful for trying small
+              changes and seeing the result quickly.
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="https://www.w3schools.com/html/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >HTML tutorial <span aria-hidden="true">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.w3schools.com/css/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >CSS tutorial <span aria-hidden="true">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.w3schools.com/js/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >JavaScript tutorial <span aria-hidden="true">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.w3schools.com/jquery/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >jQuery tutorial <span aria-hidden="true">↗</span></a
+                >
+              </li>
+            </ul>
+          </article>
+          <article class="resource-card resource-card-accent">
+            <p class="resource-topic">JavaScript library</p>
+            <h3>jQuery Learning Center</h3>
+            <p>
+              Guides to jQuery's syntax, effects, events, and DOM manipulation.
+              jQuery is a JavaScript library, so learn JavaScript fundamentals
+              first.
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="https://learn.jquery.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Visit the jQuery Learning Center
+                  <span aria-hidden="true">↗</span></a
+                >
+              </li>
+            </ul>
+          </article>
+        </div>
+        <p class="resource-note">
+          <span aria-hidden="true">↳</span> JavaScript is the language; jQuery
+          is an optional library built on top of it. Start with HTML, CSS, and
+          JavaScript basics before adding libraries.
+        </p>
+      </section>
+
+      <section class="finish-section" aria-labelledby="finish-title">
+        <p class="eyebrow">YOU'VE GOT THE BUILDING BLOCKS</p>
+        <h2 id="finish-title">
+          Structure. Meaning. Style.<br /><span>Now go make something.</span>
+        </h2>
+        <div class="finish-actions">
+          <a class="button button-dark" href="#top"
+            >Back to the top <span aria-hidden="true">↑</span></a
+          ><a class="button button-dark" href="activities.html"
+            >More HTML activities <span aria-hidden="true">→</span></a
+          >
+          <p>
+            Try changing a heading, adding a link, or styling a class of your
+            own.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#top"
+        ><span class="brand-mark" aria-hidden="true">&lt;/&gt;</span
+        ><span
+          >Web basics <span class="brand-muted">/ field guide</span></span
+        ></a
+      >
+      <p>Made for curious beginners. Keep exploring.</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>

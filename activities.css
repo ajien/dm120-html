@@ -1,0 +1,422 @@
+/* Extra styling for the separate HTML practice page. */
+
+.activities-page {
+  background: var(--paper);
+}
+
+.activities-hero {
+  padding: 5rem max(8vw, calc((100vw - 1120px) / 2)) 3.5rem;
+  background: #f0f2e9;
+}
+
+.activities-hero h1 {
+  max-width: 900px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.activities-hero > p:not(.eyebrow) {
+  max-width: 690px;
+  margin: 1.3rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.activity-reminder {
+  display: flex;
+  max-width: 750px;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid #a8bf60;
+  background: var(--white);
+}
+
+.activity-reminder > span {
+  color: #789346;
+}
+
+.activity-reminder p {
+  margin: 0;
+  color: #59675f;
+  font-size: var(--font-size-support);
+}
+
+.activity-reminder strong {
+  color: var(--ink);
+}
+
+.activity-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 2rem;
+}
+
+.activity-jump a {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #d2dbcf;
+  border-radius: 3px;
+  color: var(--green);
+  background: rgba(255, 255, 255, 0.55);
+  font-size: var(--font-size-support);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.activity-jump a:hover {
+  background: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.activity-list {
+  display: grid;
+  gap: 1rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.activity-card {
+  scroll-margin-top: 1.5rem;
+  padding: 1.8rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--white);
+}
+
+.activity-card-heading {
+  display: grid;
+  grid-template-columns: 2.7rem minmax(0, 1fr);
+  align-items: start;
+  gap: 1rem;
+  max-width: 860px;
+  margin-bottom: 1.4rem;
+}
+
+.activity-index {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--green);
+  background: var(--lime);
+  font-family: var(--serif);
+  font-size: 1rem;
+}
+
+.activity-card-heading .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.activity-card-heading h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.activity-card-heading > div > p:last-child {
+  max-width: 720px;
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: var(--font-size-support);
+}
+
+.activity-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: start;
+  gap: 1.2rem;
+  margin-left: 3.5rem;
+}
+
+.activity-task {
+  padding: 1.1rem 1.2rem;
+  border-radius: 4px;
+  background: #f3f4ec;
+}
+
+.activity-task h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.activity-task ol {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #59675f;
+  font-size: var(--font-size-support);
+}
+
+.activity-task li {
+  padding-left: 0.15rem;
+}
+
+.activity-check {
+  margin: 0.85rem 0 0;
+  padding: 0.7rem;
+  border-top: 1px solid #dce2d6;
+  color: #59675f;
+  font-size: var(--font-size-label);
+  line-height: 1.65;
+}
+
+.activity-check strong {
+  color: var(--green-dark);
+}
+
+.starter-example {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #304d42;
+  border-radius: 4px;
+  background: var(--code-bg);
+}
+
+.example-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  color: #b4c3b5;
+  font-size: var(--font-size-label);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.example-label span {
+  color: #e0e8db;
+  font-family: monospace;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.starter-example pre {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  font-size: var(--font-size-code);
+}
+
+.external-image-example {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.list-examples {
+  display: grid;
+  gap: 0;
+}
+
+.list-examples > div + div {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.list-examples .example-label {
+  padding-bottom: 0.35rem;
+}
+
+.list-examples pre {
+  padding-top: 0.5rem;
+}
+
+.mistakes-section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 4rem;
+}
+
+.mistakes-heading {
+  max-width: 700px;
+  margin: 0 auto 1.2rem;
+  text-align: center;
+}
+
+.mistakes-heading .eyebrow {
+  margin-bottom: 0.45rem;
+}
+
+.mistakes-heading h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.mistakes-heading > p:last-child {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: var(--font-size-support);
+}
+
+.mistakes-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mistakes-list li {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--muted);
+  background: var(--white);
+  font-size: var(--font-size-support);
+}
+
+.mistakes-list strong {
+  color: var(--ink);
+}
+
+.activities-finish {
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  background: #f0f2e9;
+}
+
+.activities-finish h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.activities-finish > p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 1rem auto 1.4rem;
+  color: var(--muted);
+  font-size: var(--font-size-support);
+}
+
+.recipe-checklist {
+  display: grid;
+  max-width: 760px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 1rem;
+  margin: 1.4rem auto 0.9rem;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.recipe-checklist li {
+  position: relative;
+  padding: 0.75rem 0.85rem 0.75rem 2rem;
+  border: 1px solid #dce2d6;
+  border-radius: 4px;
+  color: #59675f;
+  background: var(--white);
+  font-size: var(--font-size-label);
+}
+
+.recipe-checklist li::before {
+  position: absolute;
+  top: 0.78rem;
+  left: 0.8rem;
+  color: #789346;
+  content: "✓";
+  font-weight: 800;
+}
+
+.recipe-extra {
+  margin: 0 auto 1.2rem !important;
+  font-size: var(--font-size-label) !important;
+}
+
+@media (max-width: 800px) {
+  .activities-hero {
+    padding-right: 6vw;
+    padding-left: 6vw;
+  }
+
+  .activity-content {
+    grid-template-columns: 1fr;
+  }
+
+  .mistakes-section {
+    padding-right: 6vw;
+    padding-left: 6vw;
+  }
+}
+
+@media (max-width: 680px) {
+  .activities-hero {
+    padding: 3.5rem 6vw 2.5rem;
+  }
+
+  .activities-hero h1 {
+    font-size: clamp(3rem, 13vw, 4.4rem);
+  }
+
+  .activity-list {
+    gap: 0.8rem;
+    padding: 2.5rem 5vw;
+  }
+
+  .activity-card {
+    padding: 1.1rem;
+  }
+
+  .activity-card-heading {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+
+  .activity-index {
+    width: 2rem;
+    height: 2rem;
+    font-size: var(--font-size-label);
+  }
+
+  .activity-card-heading h2 {
+    font-size: 1.75rem;
+  }
+
+  .activity-content {
+    gap: 0.8rem;
+    margin-left: 0;
+  }
+
+  .activity-task {
+    padding: 0.9rem;
+  }
+
+  .mistakes-section {
+    padding: 0.5rem 5vw 2.5rem;
+  }
+
+  .mistakes-list {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .activities-finish {
+    padding: 3.5rem 6vw;
+  }
+
+  .recipe-checklist {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}

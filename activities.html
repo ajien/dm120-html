@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Practice common HTML tags with guided activities for beginners.">
+    <title>HTML Tag Activities — Web basics field guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="activities.css">
+  </head>
+  <body class="activities-page">
+    <a class="skip-link" href="#main-content">Skip to activities</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Web basics field guide home">
+        <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+        <span>Web basics <span class="brand-muted">/ field guide</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="index.html">Lesson</a>
+        <a href="#activities">Activities</a>
+        <a href="playground.html">Playground</a>
+        <a class="nav-cta" href="#fork-guide">Fork instructions <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="activities-hero" aria-labelledby="activities-title">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Practice makes it stick</p>
+        <h1 id="activities-title">Try the tags.<br><span class="highlight">Learn by making.</span></h1>
+        <p>Use these short challenges to practice the HTML elements from the lesson. Work in your own CodeSandbox fork, edit the clean <strong>playground.html</strong> file, and watch the preview update.</p>
+        <div class="activity-reminder"><span aria-hidden="true">✳</span><p><strong>Before you begin:</strong> Fork the class sandbox first, so the instructor's original stays unchanged. Open <strong>playground.html</strong> for markup practice. Add styling experiments to <strong>experiments.css</strong> in your fork.</p></div>
+        <a class="button button-dark playground-button" href="#fork-guide">How to fork the sandbox <span aria-hidden="true">↓</span></a>
+        <a class="button button-dark playground-button" href="playground.html">Open the clean playground <span aria-hidden="true">↗</span></a>
+        <nav class="activity-jump" aria-label="Jump to an activity">
+          <a href="#headings">Headings</a><a href="#paragraphs">Paragraphs</a><a href="#links">Links</a><a href="#images">Images</a><a href="#lists">Lists</a><a href="#tables">Tables</a><a href="#divs">Divs &amp; containers</a><a href="#quotes">Blockquotes</a><a href="#figures">Figures</a><a href="#description-lists">Description lists</a><a href="#disclosure">Details &amp; summary</a><a href="#buttons">Buttons</a><a href="#youtube">YouTube video</a><a href="#cards">CSS cards</a>
+        </nav>
+      </section>
+
+      <section class="experiment-section" id="fork-guide" aria-labelledby="experiment-title">
+        <div class="experiment-intro">
+          <p class="eyebrow"><span class="section-number">00</span> Your own workspace</p>
+          <h2 id="experiment-title">Fork it.<br>Make it yours.</h2>
+          <p>Before changing any code, make your own copy of the class sandbox. A fork keeps the instructor's original lesson intact while giving you a safe place to experiment.</p>
+        </div>
+        <div class="experiment-steps">
+          <ol>
+            <li><span>1</span><div><h3>Open the class sandbox</h3><p>Use the CodeSandbox link shared by your instructor. Explore the preview and source files first.</p></div></li>
+            <li><span>2</span><div><h3>Fork the project</h3><p>Select <strong>Fork</strong> in CodeSandbox, usually near the top of the editor. Sign in if asked, then wait for your personal copy to open. Check that you are working in your fork—not the instructor's original.</p></div></li>
+            <li><span>3</span><div><h3>Practice HTML in the playground</h3><p>Open <strong>playground.html</strong> and add your activity markup inside <code>&lt;body&gt;</code>. This file starts clean so you can build your own page.</p></div></li>
+            <li><span>4</span><div><h3>Link your experiment stylesheet</h3><p>To try CSS, open <strong>playground.html</strong>. Inside <code>&lt;head&gt;</code>, add a link to the empty <strong>experiments.css</strong> file:</p><pre><code><span class="tok-tag">&lt;link</span> <span class="tok-attr">rel</span>=<span class="tok-value">"stylesheet"</span>
+  <span class="tok-attr">href</span>=<span class="tok-value">"experiments.css"</span><span class="tok-tag">&gt;</span></code></pre></div></li>
+            <li><span>5</span><div><h3>Write a rule and experiment</h3><p>Add your CSS to <strong>experiments.css</strong>. Change selectors or values and compare the result in the preview.</p><pre><code><span class="tok-selector">body</span> <span class="tok-brace">{</span>
+  <span class="tok-property">background-color</span>: <span class="tok-value">#f4efe6</span>;
+<span class="tok-brace">}</span></code></pre></div></li>
+          </ol>
+          <p class="experiment-tip"><span aria-hidden="true">↳</span> Keep the instructor's original sandbox unchanged. Save all your experiments in your own fork.</p>
+        </div>
+      </section>
+
+      <section class="activity-list" id="activities" aria-label="HTML practice activities">
+        <article class="activity-card" id="headings">
+          <div class="activity-card-heading"><span class="activity-index">01</span><div><p class="eyebrow">BUILD A CLEAR OUTLINE</p><h2>Headings</h2><p>Use headings to organize information into a hierarchy. A heading's level shows its place in the outline—not just how large it looks.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Add one main heading with <code>&lt;h1&gt;</code>.</li><li>Add at least two section headings with <code>&lt;h2&gt;</code>.</li><li>If a section needs subsections, use <code>&lt;h3&gt;</code> below its <code>&lt;h2&gt;</code>.</li></ol><p class="activity-check"><strong>Check:</strong> Read only your headings. Do they make a sensible outline? Use one clear <code>&lt;h1&gt;</code> for the page's main topic.</p></div>
+            <div class="starter-example"><div class="example-label">STARTER SHAPE <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;main&gt;</span>
+  <span class="tok-tag">&lt;h1&gt;</span>My favorite place<span class="tok-tag">&lt;/h1&gt;</span>
+  <span class="tok-tag">&lt;section&gt;</span>
+    <span class="tok-tag">&lt;h2&gt;</span>Why I like it<span class="tok-tag">&lt;/h2&gt;</span>
+    <span class="tok-comment">&lt;!-- Add this section's content --&gt;</span>
+  <span class="tok-tag">&lt;/section&gt;</span>
+<span class="tok-tag">&lt;/main&gt;</span></code></pre></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="paragraphs">
+          <div class="activity-card-heading"><span class="activity-index">02</span><div><p class="eyebrow">WRITE AND EMPHASIZE</p><h2>Paragraphs</h2><p>Use <code>&lt;p&gt;</code> for a paragraph of text. Use <code>&lt;strong&gt;</code> for important words and <code>&lt;em&gt;</code> when you want to emphasize a word or phrase.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Write two short paragraphs about your topic, each in its own <code>&lt;p&gt;</code>.</li><li>Wrap one important phrase in <code>&lt;strong&gt;</code>.</li><li>Use <code>&lt;em&gt;</code> to emphasize a word in the other paragraph.</li></ol><p class="activity-check"><strong>Check:</strong> Each paragraph should explain one idea. The tags add meaning; CSS can change how that meaning looks.</p></div>
+            <div class="starter-example"><div class="example-label">STARTER SHAPE <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;p&gt;</span>
+  I like this place because <span class="tok-tag">&lt;strong&gt;</span>everyone feels welcome<span class="tok-tag">&lt;/strong&gt;</span>.
+<span class="tok-tag">&lt;/p&gt;</span>
+<span class="tok-tag">&lt;p&gt;</span>
+  It is especially <span class="tok-tag">&lt;em&gt;</span>peaceful<span class="tok-tag">&lt;/em&gt;</span> in the morning.
+<span class="tok-tag">&lt;/p&gt;</span></code></pre></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="links">
+          <div class="activity-card-heading"><span class="activity-index">03</span><div><p class="eyebrow">CONNECT PAGES AND PLACES</p><h2>Links</h2><p>The <code>&lt;a&gt;</code> (anchor) element makes a link. Put its destination in the <code>href</code> attribute and meaningful, clickable text between the opening and closing tags.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Create a new file named <strong>about.html</strong> beside <strong>playground.html</strong>. Add a heading to that file.</li><li>In <strong>playground.html</strong>, link to your new page using a relative path.</li><li>Add a second link to an external website using its full address, including <code>https://</code>.</li><li>Try changing the link text. It should clearly describe the destination.</li></ol><p class="activity-check"><strong>Check:</strong> A local link uses a filename or path, like <code>about.html</code>. An external link uses a full URL, like <code>https://developer.mozilla.org/</code>.</p></div>
+            <div class="starter-example"><div class="example-label">INTERNAL: ANOTHER PROJECT PAGE <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-value">"about.html"</span><span class="tok-tag">&gt;</span>
+  About this project
+<span class="tok-tag">&lt;/a&gt;</span></code></pre><div class="external-image-example"><div class="example-label">EXTERNAL: A WEBSITE ON THE WEB</div><pre><code><span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-value">"https://developer.mozilla.org/"</span><span class="tok-tag">&gt;</span>
+  Learn more on MDN
+<span class="tok-tag">&lt;/a&gt;</span></code></pre></div><p class="activity-check">If you put <strong>about.html</strong> inside a folder, include that folder in the path—for example, <code>pages/about.html</code>.</p></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="images">
+          <div class="activity-card-heading"><span class="activity-index">04</span><div><p class="eyebrow">ADD A VISUAL</p><h2>Images</h2><p>The <code>&lt;img&gt;</code> element embeds an image. Its <code>src</code> points to the image file or URL, and its <code>alt</code> text describes the image for people who cannot see it.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Upload an image to your fork, or create an <code>images</code> folder and add one there.</li><li>Add an <code>&lt;img&gt;</code> with a local <code>src</code> path that matches the file's location.</li><li>Try the external image example too; it uses a full web URL in <code>src</code>.</li><li>Write concise, useful <code>alt</code> text. If the image is purely decorative, use <code>alt=""</code>.</li></ol><p class="activity-check"><strong>Check:</strong> A local <code>src</code> such as <code>images/my-photo.jpg</code> points into your project. A full URL loads from another site and needs an internet connection. Unlike most elements, <code>&lt;img&gt;</code> has no closing tag.</p></div>
+            <div class="starter-example"><div class="example-label">LOCAL IMAGE EXAMPLE <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;img</span>
+  <span class="tok-attr">src</span>=<span class="tok-value">"images/my-photo.jpg"</span>
+  <span class="tok-attr">alt</span>=<span class="tok-value">"A short description of the photo"</span><span class="tok-tag">&gt;</span></code></pre><div class="external-image-example"><span class="example-label">OR TRY AN EXTERNAL IMAGE URL</span><pre><code><span class="tok-tag">&lt;img</span>
+  <span class="tok-attr">src</span>=<span class="tok-value">"https://placehold.co/600x400/png"</span>
+  <span class="tok-attr">alt</span>=<span class="tok-value">"A placeholder image"</span><span class="tok-tag">&gt;</span></code></pre></div></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="lists">
+          <div class="activity-card-heading"><span class="activity-index">05</span><div><p class="eyebrow">GROUP RELATED ITEMS</p><h2>Ordered &amp; unordered lists</h2><p>Choose an unordered list when item order does not matter, and an ordered list when sequence or ranking matters. Each item goes in an <code>&lt;li&gt;</code>.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Create a list of three favorite things with <code>&lt;ul&gt;</code>.</li><li>Create step-by-step instructions with <code>&lt;ol&gt;</code>.</li><li>Put each item inside <code>&lt;li&gt;</code> tags.</li></ol><p class="activity-check"><strong>Check:</strong> Does changing the order affect the meaning? Pick <code>&lt;ol&gt;</code> for a sequence and <code>&lt;ul&gt;</code> for a collection.</p></div>
+            <div class="starter-example list-examples"><div><div class="example-label">UNORDERED: A COLLECTION</div><pre><code><span class="tok-tag">&lt;ul&gt;</span>
+  <span class="tok-tag">&lt;li&gt;</span>Sketchbook<span class="tok-tag">&lt;/li&gt;</span>
+  <span class="tok-tag">&lt;li&gt;</span>Headphones<span class="tok-tag">&lt;/li&gt;</span>
+  <span class="tok-tag">&lt;li&gt;</span>Water bottle<span class="tok-tag">&lt;/li&gt;</span>
+<span class="tok-tag">&lt;/ul&gt;</span></code></pre></div><div><div class="example-label">ORDERED: A SEQUENCE</div><pre><code><span class="tok-tag">&lt;ol&gt;</span>
+  <span class="tok-tag">&lt;li&gt;</span>Open the editor<span class="tok-tag">&lt;/li&gt;</span>
+  <span class="tok-tag">&lt;li&gt;</span>Write some HTML<span class="tok-tag">&lt;/li&gt;</span>
+  <span class="tok-tag">&lt;li&gt;</span>Preview the page<span class="tok-tag">&lt;/li&gt;</span>
+<span class="tok-tag">&lt;/ol&gt;</span></code></pre></div></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="tables">
+          <div class="activity-card-heading"><span class="activity-index">06</span><div><p class="eyebrow">PRESENT COMPARABLE DATA</p><h2>Tables</h2><p>Use a table for data that belongs in rows and columns—not to position the whole page. A caption and header cells help everyone understand the data.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Make a small table comparing three books, games, or activities.</li><li>Add a <code>&lt;caption&gt;</code>, column headings with <code>&lt;th scope="col"&gt;</code>, and one <code>&lt;tr&gt;</code> per row.</li><li>Use <code>&lt;td&gt;</code> for data cells. Add a <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> to group table parts.</li></ol><p class="activity-check"><strong>Check:</strong> Keep each row's values under the correct headings. Use tables for data, not visual layout.</p></div>
+            <div class="starter-example"><div class="example-label">TABLE STRUCTURE <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;table&gt;</span>
+  <span class="tok-tag">&lt;caption&gt;</span>My favorites<span class="tok-tag">&lt;/caption&gt;</span>
+  <span class="tok-tag">&lt;thead&gt;</span>
+    <span class="tok-tag">&lt;tr&gt;</span>
+      <span class="tok-tag">&lt;th</span> <span class="tok-attr">scope</span>=<span class="tok-value">"col"</span><span class="tok-tag">&gt;</span>Name<span class="tok-tag">&lt;/th&gt;</span>
+      <span class="tok-tag">&lt;th</span> <span class="tok-attr">scope</span>=<span class="tok-value">"col"</span><span class="tok-tag">&gt;</span>Why I like it<span class="tok-tag">&lt;/th&gt;</span>
+    <span class="tok-tag">&lt;/tr&gt;</span>
+  <span class="tok-tag">&lt;/thead&gt;</span>
+  <span class="tok-tag">&lt;tbody&gt;</span>
+    <span class="tok-tag">&lt;tr&gt;</span>
+      <span class="tok-tag">&lt;td&gt;</span>Example<span class="tok-tag">&lt;/td&gt;</span>
+      <span class="tok-tag">&lt;td&gt;</span>Add your reason<span class="tok-tag">&lt;/td&gt;</span>
+    <span class="tok-tag">&lt;/tr&gt;</span>
+  <span class="tok-tag">&lt;/tbody&gt;</span>
+<span class="tok-tag">&lt;/table&gt;</span></code></pre></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="divs">
+          <div class="activity-card-heading"><span class="activity-index">07</span><div><p class="eyebrow">GROUP CONTENT FOR STYLING</p><h2>Divs &amp; colored boxes</h2><p>A <code>&lt;div&gt;</code> is a generic block container. Use it to group elements when no more meaningful semantic element fits—then use a class to target the group with CSS.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Wrap a heading and paragraph together inside a <code>&lt;div class="info-box"&gt;</code>.</li><li>In <strong>experiments.css</strong>, write a rule for <code>.info-box</code> that adds a background color, padding, and a border.</li><li>Make a second box with the same class. Notice that one CSS rule styles both.</li><li>Try the same class on a <code>&lt;section&gt;</code> or <code>&lt;article&gt;</code> to see that CSS classes can style different container elements.</li></ol><p class="activity-check"><strong>Check:</strong> Choose a semantic element such as <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, or <code>&lt;aside&gt;</code> when it describes the content's purpose. Use a <code>&lt;div&gt;</code> when a generic grouping is all you need.</p></div>
+            <div class="starter-example"><div class="example-label">HTML: GIVE THE CONTAINER A CLASS <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-value">"info-box"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;h2&gt;</span>Did you know?<span class="tok-tag">&lt;/h2&gt;</span>
+  <span class="tok-tag">&lt;p&gt;</span>A class name can be reused.<span class="tok-tag">&lt;/p&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span></code></pre><div class="example-label">CSS: ADD THIS TO YOUR EXPERIMENTS <span>experiments.css</span></div><pre><code><span class="tok-selector">.info-box</span> <span class="tok-brace">{</span>
+  <span class="tok-property">background-color</span>: <span class="tok-value">#e6f0d8</span>;
+  <span class="tok-property">padding</span>: <span class="tok-value">1rem</span>;
+  <span class="tok-property">border</span>: <span class="tok-value">2px solid #789346</span>;
+  <span class="tok-property">border-radius</span>: <span class="tok-value">8px</span>;
+<span class="tok-brace">}</span></code></pre><p class="activity-check">Try changing the HTML tag to <code>&lt;section class="info-box"&gt;</code> or <code>&lt;article class="info-box"&gt;</code>. The class rule still applies; the element's meaning changes.</p></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="quotes">
+          <div class="activity-card-heading"><span class="activity-index">08</span><div><p class="eyebrow">QUOTE A SOURCE</p><h2>Blockquotes</h2><p>Use <code>&lt;blockquote&gt;</code> for a longer quotation taken from another source. The optional <code>&lt;cite&gt;</code> element can name the source; it does not automatically create a citation or link.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Choose a short quotation from a book, article, or interview.</li><li>Put the quoted passage inside <code>&lt;blockquote&gt;</code>.</li><li>Add the source title or author in a <code>&lt;cite&gt;</code> element nearby.</li></ol><p class="activity-check"><strong>Check:</strong> Use <code>&lt;q&gt;</code> for a short quotation within a sentence, and <code>&lt;blockquote&gt;</code> for a longer, separate quotation. Provide enough source information for readers to identify it.</p></div>
+            <div class="starter-example"><div class="example-label">A LONGER QUOTATION <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;figure&gt;</span>
+  <span class="tok-tag">&lt;blockquote&gt;</span>
+    <span class="tok-tag">&lt;p&gt;</span>It always seems impossible until it's done.<span class="tok-tag">&lt;/p&gt;</span>
+  <span class="tok-tag">&lt;/blockquote&gt;</span>
+  <span class="tok-tag">&lt;figcaption&gt;</span>
+    — <span class="tok-tag">&lt;cite&gt;</span>Nelson Mandela<span class="tok-tag">&lt;/cite&gt;</span>
+  <span class="tok-tag">&lt;/figcaption&gt;</span>
+<span class="tok-tag">&lt;/figure&gt;</span></code></pre><p class="activity-check">This example also previews how <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> can group related content.</p></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="figures">
+          <div class="activity-card-heading"><span class="activity-index">09</span><div><p class="eyebrow">GROUP MEDIA AND CAPTIONS</p><h2>Figures</h2><p><code>&lt;figure&gt;</code> groups a piece of self-contained content, often an image, with an optional <code>&lt;figcaption&gt;</code> that explains or credits it.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Take the local image example from the Images activity and wrap it in <code>&lt;figure&gt;</code>.</li><li>Add a <code>&lt;figcaption&gt;</code> with a caption or photo credit.</li><li>Try a second figure containing a chart, illustration, or short code example.</li></ol><p class="activity-check"><strong>Check:</strong> <code>alt</code> text describes the image for people who cannot see it. A caption is visible to everyone and gives context. They serve different purposes.</p></div>
+            <div class="starter-example"><div class="example-label">IMAGE WITH A CAPTION <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;figure&gt;</span>
+  <span class="tok-tag">&lt;img</span>
+    <span class="tok-attr">src</span>=<span class="tok-value">"images/my-photo.jpg"</span>
+    <span class="tok-attr">alt</span>=<span class="tok-value">"A red kite flying above a beach"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;figcaption&gt;</span>
+    A windy afternoon at the beach.
+  <span class="tok-tag">&lt;/figcaption&gt;</span>
+<span class="tok-tag">&lt;/figure&gt;</span></code></pre></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="description-lists">
+          <div class="activity-card-heading"><span class="activity-index">10</span><div><p class="eyebrow">MAKE A MINI GLOSSARY</p><h2>Description lists</h2><p>A description list uses <code>&lt;dl&gt;</code> as its container, <code>&lt;dt&gt;</code> for each term, and <code>&lt;dd&gt;</code> for its description or value.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Create a glossary of three web-development terms.</li><li>Put the list inside <code>&lt;dl&gt;</code>, and mark each term with <code>&lt;dt&gt;</code>.</li><li>Give each term a definition in a following <code>&lt;dd&gt;</code>.</li><li>Try a list of event details, such as a date and location, instead of glossary terms.</li></ol><p class="activity-check"><strong>Check:</strong> Description lists are for associated terms and descriptions (or name/value pairs), not a replacement for every bulleted list.</p></div>
+            <div class="starter-example"><div class="example-label">A WEB GLOSSARY <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;dl&gt;</span>
+  <span class="tok-tag">&lt;dt&gt;</span>HTML<span class="tok-tag">&lt;/dt&gt;</span>
+  <span class="tok-tag">&lt;dd&gt;</span>The markup language for page structure.<span class="tok-tag">&lt;/dd&gt;</span>
+
+  <span class="tok-tag">&lt;dt&gt;</span>CSS<span class="tok-tag">&lt;/dt&gt;</span>
+  <span class="tok-tag">&lt;dd&gt;</span>The language used to style a page.<span class="tok-tag">&lt;/dd&gt;</span>
+<span class="tok-tag">&lt;/dl&gt;</span></code></pre></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="disclosure">
+          <div class="activity-card-heading"><span class="activity-index">11</span><div><p class="eyebrow">REVEAL EXTRA INFORMATION</p><h2>Details &amp; summary</h2><p><code>&lt;details&gt;</code> creates a disclosure widget that can be opened and closed. Its first child <code>&lt;summary&gt;</code> provides the visible label. It works without JavaScript.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Add a <code>&lt;details&gt;</code> section containing a <code>&lt;summary&gt;</code> question and a paragraph answer.</li><li>Preview the page and open and close the disclosure with a mouse and keyboard.</li><li>Add a second details widget about a different topic.</li></ol><p class="activity-check"><strong>Check:</strong> Put the summary first inside <code>&lt;details&gt;</code>, and use a clear label that describes what will be revealed.</p></div>
+            <div class="starter-example"><div class="example-label">A NATIVE DISCLOSURE WIDGET <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;details&gt;</span>
+  <span class="tok-tag">&lt;summary&gt;</span>What does CSS do?<span class="tok-tag">&lt;/summary&gt;</span>
+  <span class="tok-tag">&lt;p&gt;</span>CSS controls a page's presentation, such as
+    colors, spacing, and layout.<span class="tok-tag">&lt;/p&gt;</span>
+<span class="tok-tag">&lt;/details&gt;</span></code></pre></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="buttons">
+          <div class="activity-card-heading"><span class="activity-index">12</span><div><p class="eyebrow">STYLE A LINK LIKE A BUTTON</p><h2>Links &amp; buttons</h2><p>CSS can make an anchor look like a button, but the element still means “go to a destination.” Use <code>&lt;a&gt;</code> for navigation and <code>&lt;button&gt;</code> for an action on the current page.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Add a link to another page and give it the class <code>button-link</code>.</li><li>In <strong>experiments.css</strong>, add padding, a background color, a text color, and a border radius for <code>.button-link</code>.</li><li>Add a real <code>&lt;button type="button"&gt;</code> beside it to represent an action such as “Submit Form.”</li><li>Compare the two: the anchor navigates; the button represents an action. A button needs JavaScript or a form to perform that action.</li></ol><p class="activity-check"><strong>Check:</strong> Do not use a link with <code>href="#"</code> as a fake button. Keep the correct HTML element and use CSS for appearance.</p></div>
+            <div class="starter-example"><div class="example-label">HTML: LINK FOR NAVIGATION, BUTTON FOR AN ACTION <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;a</span> <span class="tok-attr">class</span>=<span class="tok-value">"button-link"</span>
+  <span class="tok-attr">href</span>=<span class="tok-value">"about.html"</span><span class="tok-tag">&gt;</span>Read About Us<span class="tok-tag">&lt;/a&gt;</span>
+
+<span class="tok-tag">&lt;button</span> <span class="tok-attr">type</span>=<span class="tok-value">"button"</span><span class="tok-tag">&gt;</span>Submit Form<span class="tok-tag">&lt;/button&gt;</span></code></pre><div class="example-label">CSS: GIVE THE LINK A BUTTON-LIKE LOOK <span>experiments.css</span></div><pre><code><span class="tok-selector">.button-link</span> <span class="tok-brace">{</span>
+  <span class="tok-property">display</span>: <span class="tok-value">inline-block</span>;
+  <span class="tok-property">padding</span>: <span class="tok-value">0.65rem 1rem</span>;
+  <span class="tok-property">color</span>: <span class="tok-value">white</span>;
+  <span class="tok-property">background-color</span>: <span class="tok-value">#284b3b</span>;
+  <span class="tok-property">border-radius</span>: <span class="tok-value">4px</span>;
+  <span class="tok-property">text-decoration</span>: <span class="tok-value">none</span>;
+<span class="tok-brace">}</span></code></pre></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="youtube">
+          <div class="activity-card-heading"><span class="activity-index">13</span><div><p class="eyebrow">EMBED A VIDEO</p><h2>YouTube video</h2><p>An <code>&lt;iframe&gt;</code> embeds another page inside yours. YouTube provides an embed URL for each video; give the frame a descriptive title so people using assistive technology know what it contains.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>Choose a YouTube video and find its video ID in the URL. For example, in <code>https://www.youtube.com/watch?v=abc123XYZ</code>, the ID is <code>abc123XYZ</code>.</li><li>In <strong>playground.html</strong>, add an <code>&lt;iframe&gt;</code> using the embed URL format <code>https://www.youtube.com/embed/VIDEO_ID</code>.</li><li>Replace <code>VIDEO_ID</code> with the ID for your video, and write a descriptive <code>title</code>.</li><li>Preview the page and check that the video fits. In <strong>experiments.css</strong>, try setting the frame's width to <code>100%</code> and its <code>aspect-ratio</code> to <code>16 / 9</code>.</li></ol><p class="activity-check"><strong>Check:</strong> Use YouTube's <code>/embed/</code> URL, not the regular watch-page URL. Every iframe should have a descriptive <code>title</code>.</p></div>
+            <div class="starter-example"><div class="example-label">HTML: EMBED A YOUTUBE VIDEO <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;iframe</span>
+  <span class="tok-attr">src</span>=<span class="tok-value">"https://www.youtube.com/embed/VIDEO_ID"</span>
+              <span class="tok-attr">class</span>=<span class="tok-value">"video-embed"</span>
+              <span class="tok-attr">title</span>=<span class="tok-value">"A short description of the video"</span>
+  <span class="tok-attr">width</span>=<span class="tok-value">"560"</span>
+  <span class="tok-attr">height</span>=<span class="tok-value">"315"</span>
+  <span class="tok-attr">loading</span>=<span class="tok-value">"lazy"</span>
+  <span class="tok-attr">allowfullscreen</span><span class="tok-tag">&gt;&lt;/iframe&gt;</span></code></pre><div class="example-label">CSS: KEEP THE VIDEO RESPONSIVE <span>experiments.css</span></div><pre><code><span class="tok-selector">.video-embed</span> <span class="tok-brace">{</span>
+  <span class="tok-property">width</span>: <span class="tok-value">100%</span>;
+  <span class="tok-property">max-width</span>: <span class="tok-value">560px</span>;
+  <span class="tok-property">aspect-ratio</span>: <span class="tok-value">16 / 9</span>;
+  <span class="tok-property">border</span>: <span class="tok-value">0</span>;
+<span class="tok-brace">}</span></code></pre><p class="activity-check">Add <code>class="video-embed"</code> to the iframe to connect it to this CSS rule.</p></div>
+          </div>
+        </article>
+
+        <article class="activity-card" id="cards">
+          <div class="activity-card-heading"><span class="activity-index">14</span><div><p class="eyebrow">PRACTICE CSS COMPOSITION</p><h2>Style a card</h2><p>A card is a visual group of related content. HTML provides the structure; CSS adds spacing, color, borders, and hierarchy. Build one card, then reuse its class for another.</p></div></div>
+          <div class="activity-content">
+            <div class="activity-task"><h3>Your challenge</h3><ol><li>In <strong>playground.html</strong>, add an <code>&lt;article class="card"&gt;</code> with a heading, paragraph, and link.</li><li>In <strong>experiments.css</strong>, give <code>.card</code> padding, a light background, a border, and rounded corners.</li><li>Use <code>max-width</code> so the text line does not get too wide.</li><li>Make a second card with the same class. Try changing the background or adding a class such as <code>card-featured</code> for one special card.</li></ol><p class="activity-check"><strong>Check:</strong> The <code>class</code> name connects the HTML element to the CSS selector <code>.card</code>. Add the dot in CSS, but not in the HTML attribute.</p></div>
+            <div class="starter-example"><div class="example-label">HTML: STRUCTURE THE CARD <span>playground.html</span></div><pre><code><span class="tok-tag">&lt;article</span> <span class="tok-attr">class</span>=<span class="tok-value">"card"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;p</span> <span class="tok-attr">class</span>=<span class="tok-value">"card-category"</span><span class="tok-tag">&gt;</span>GARDEN NOTES<span class="tok-tag">&lt;/p&gt;</span>
+  <span class="tok-tag">&lt;h2&gt;</span>Grow something small<span class="tok-tag">&lt;/h2&gt;</span>
+  <span class="tok-tag">&lt;p&gt;</span>Start with one sunny pot of herbs.<span class="tok-tag">&lt;/p&gt;</span>
+  <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-value">"about.html"</span><span class="tok-tag">&gt;</span>Read the notes<span class="tok-tag">&lt;/a&gt;</span>
+<span class="tok-tag">&lt;/article&gt;</span></code></pre><div class="example-label">CSS: STYLE THE CARD <span>experiments.css</span></div><pre><code><span class="tok-selector">.card</span> <span class="tok-brace">{</span>
+  <span class="tok-property">max-width</span>: <span class="tok-value">28rem</span>;
+  <span class="tok-property">padding</span>: <span class="tok-value">1.5rem</span>;
+  <span class="tok-property">background-color</span>: <span class="tok-value">#ffffff</span>;
+  <span class="tok-property">border</span>: <span class="tok-value">1px solid #dce2da</span>;
+  <span class="tok-property">border-radius</span>: <span class="tok-value">8px</span>;
+<span class="tok-brace">}</span>
+
+<span class="tok-selector">.card h2</span> <span class="tok-brace">{</span>
+  <span class="tok-property">margin-top</span>: <span class="tok-value">0</span>;
+  <span class="tok-property">color</span>: <span class="tok-value">#284b3b</span>;
+<span class="tok-brace">}</span></code></pre><p class="activity-check">Try adding <code>box-shadow</code>, changing the border color, or creating a reusable <code>.card-featured</code> class.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="mistakes-section" aria-labelledby="mistakes-title">
+        <div class="mistakes-heading">
+          <p class="eyebrow">A QUICK DEBUGGING CHECKLIST</p>
+          <h2 id="mistakes-title">Common beginner mistakes</h2>
+          <p>If something does not look or work as expected, check these small details first.</p>
+        </div>
+        <ul class="mistakes-list">
+          <li><strong>Tags are not closed or nested in the right order.</strong> Close the most recently opened element first.</li>
+          <li><strong>A file name or path does not match.</strong> Check spelling, capitalization, folders, and extensions in <code>href</code> or <code>src</code>.</li>
+          <li><strong>An attribute is on the wrong element.</strong> For example, links use <code>href</code>; images use <code>src</code> and should include <code>alt</code>.</li>
+          <li><strong>A CSS rule does not apply.</strong> Check the selector, the class name (including the dot in CSS), braces, colons, semicolons, and that the stylesheet is linked.</li>
+          <li><strong>Expecting a developer-tools edit to stay.</strong> DevTools changes are temporary; save lasting styles in <code>experiments.css</code> in your fork.</li>
+        </ul>
+      </section>
+
+      <section class="activities-finish" aria-labelledby="finish-title">
+        <p class="eyebrow">ONE LAST CHALLENGE</p>
+        <h2 id="finish-title">Create a recipe card.</h2>
+        <p>Build a recipe page in <strong>playground.html</strong>, combining the elements from the activities. Use meaningful HTML first, then make the recipe feel like a card with CSS in <strong>experiments.css</strong>.</p>
+        <ul class="recipe-checklist">
+          <li>A recipe title with <code>&lt;h1&gt;</code>, section headings with <code>&lt;h2&gt;</code>, and an introductory paragraph.</li>
+          <li>A recipe photo inside <code>&lt;figure&gt;</code>, with descriptive <code>alt</code> text and a <code>&lt;figcaption&gt;</code>.</li>
+          <li>An unordered ingredients list and an ordered method list.</li>
+          <li>A small table for preparation time, cooking time, and servings.</li>
+          <li>A <code>&lt;blockquote&gt;</code> for a family cooking tip or a <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> section for substitutions.</li>
+          <li>An <code>&lt;article class="recipe-card"&gt;</code> wrapper, styled with padding, background, border, and rounded corners.</li>
+        </ul>
+        <p class="recipe-extra">Optional: add a link to a related recipe and a description list for dietary notes. Keep the page heading order logical and reuse classes when styling.</p>
+        <a class="button button-dark" href="playground.html">Open playground <span aria-hidden="true">↗</span></a>
+        <a class="button button-dark" href="index.html">Back to the lesson <span aria-hidden="true">←</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">&lt;/&gt;</span><span>Web basics <span class="brand-muted">/ field guide</span></span></a><p>Practice in your own fork. Keep exploring.</p><a href="#main-content">Back to top ↑</a></footer>
+  </body>
+</html>
